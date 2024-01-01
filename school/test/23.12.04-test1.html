@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			document.write("<table border='1' width='300px' height='300px'>");
+			for (var i = 1; i <= 4; i++) {
+				document.write("<tr>");
+				for (var j = 1; j <= 4; j++) {
+					document.write("<td>");
+					document.write("&nbsp");
+					document.write("</td>");
+				}
+				document.write("</tr>");
+			}
+			document.write("</table>");
+		</script>
+
+		<script>
+			document.write("<table border='1' width='300px' height='300px'>");
+			for (let i = 0; i < 4; i++)
+			{
+				document.write("<tr>");
+				for (let j = 0; j < 4; j++)
+				{
+					document.write("<td>");
+					document.write("&nbsp");
+					document.write("</td>");
+				}
+				document.write("</tr>");
+			}
+			document.write("</table>");
+		</script>
+	</body>
+</html>

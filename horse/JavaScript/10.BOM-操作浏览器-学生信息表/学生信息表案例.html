@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>学生信息管理</title>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+  <h1>新增学员</h1>
+  <form class="info" autocomplete="off">
+    姓名：<input type="text" class="uname" name="uname" />
+    年龄：<input type="text" class="age" name="age" />
+    性别:
+    <select name="gender" class="gender">
+      <option value="男">男</option>
+      <option value="女">女</option>
+    </select>
+    薪资：<input type="text" class="salary" name="salary" />
+    就业城市：<select name="city" class="city">
+      <option value="北京">北京</option>
+      <option value="上海">上海</option>
+      <option value="广州">广州</option>
+      <option value="深圳">深圳</option>
+      <option value="曹县">曹县</option>
+    </select>
+    <button class="add">录入</button>
+  </form>
+
+  <h1>就业榜</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>薪资</th>
+        <th>就业城市</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+  <script>
+
+      const data = localStorage.getItem("student-data");
+
+      //如果原先有数据，就返回对象，不然就创建一个空数组
+      const arr = data ? JSON.parse(data) : [];
+
+      const tbody = document.querySelector("tbody");
+
+      function render() {//渲染函数
+        const trArr = arr.map(function (item, i) {
+          return `
+          <tr>
+          <td>${item.stuId}</td>
+          <td>${item.uname}</td>
+          <td>${item.age}</td>
+          <td>${item.gender}</td>
+          <td>${item.salary}</td>
+          <td>${item.city}</td>
+          <td>
+            <a href="javascript:" data-id=${i}>删除</a>
+          </td>
+          </tr> 
+          `
+        })
+
+        tbody.innerHTML = trArr.join("");//数组元素之间会有一个逗号，此时得到的列表之间会有一个逗号,需要使用join方法清除逗号
+      }
+
+      render();//渲染信息,在没有追加之前先渲染一次，保证打开的使用展示之前的数据
+
+      const info = document.querySelector(".info");
+
+      const items = info.querySelectorAll("[name]");//在info中找到含有name属性的标签
+
+      info.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        //-------------------------------将新增学生的信息录入到一个对象中
+        //声明一个空对象
+        const obj = {};
+        obj.stuId = arr.length ? arr[arr.length - 1].stuId + 1 : 1;//单独追加学号
+
+        for (let i = 0; i < items.length; i++){//遍历一个学生的所有属性
+
+          const item = items[i];//获取当前的某一项属性的标签对应的对象
+
+          if (items[i].value === ""){
+            return alert("输入内容不能为空");
+          }
+
+          obj[item.name] = item.value;//追加每个表单的属性及属性值
+        }
+        //-------------------------------
+
+        //将对象追加到数字组中
+        arr.push(obj);
+
+        //将所有学生信息存到本地
+        localStorage.setItem("student-data", JSON.stringify(arr));
+
+        render();//渲染信息
+
+        this.reset();
+      })
+
+      tbody.addEventListener("click", function (e) {
+        if(e.target.tagName === 'A'){
+          arr.splice(e.target.dataset.id, 1);
+          localStorage.setItem("student-data", JSON.stringify(arr));
+
+          render();//渲染信息
+        }
+      })
+  </script>
+</body>
+</html>

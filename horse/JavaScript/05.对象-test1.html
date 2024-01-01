@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style> 
+    div {
+        height: 300px;
+        width: 300px;
+    }
+    </style>
+</head>
+<body>
+    <!-- <script>
+        let person = {
+            "user-name": "风一样",
+            uname: "张三",
+            age: 18,
+            gender: '男',
+            song: function(x, y){
+                console.log(x + y);
+            }
+        };
+
+        for (let key in person) 
+        {
+            document.write(person[key]);
+            document.write(`</br>`);
+        }
+    </script> -->
+
+    <!-- <script>
+        let arr = ["red", "blue", "green"];
+
+        let random = Math.floor(Math.random() * arr.length);
+
+        function getRandom(N, M) 
+        {
+            return Math.floor(Math.random() * (M - N + 1) + N);
+        }
+
+        console.log(getRandom(10, 50));
+    </script> -->
+
+    <div></div>
+
+    <script>
+        function getRandomColor(flag)
+        {
+            //如果是true,返回#ffffff
+            if (flag)
+            {
+                let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+                
+                let str = '#';
+
+                for (let i = 0; i < 6; i++)
+                {
+                    let random = Math.floor(Math.random() * arr.length);
+                    str += arr[random];
+                }
+
+                return str;
+            }
+            else
+            {
+                let red = Math.floor(Math.random() * 256);
+                let green = Math.floor(Math.random() * 256);
+                let blue = Math.floor(Math.random() * 256);
+
+                return `rgb(${red},${green},${blue})`;
+            }
+        }
+
+        const div = document.querySelector("div");
+        div.style.backgroundColor = getRandomColor(true);
+       
+    </script>
+</body>
+</html>

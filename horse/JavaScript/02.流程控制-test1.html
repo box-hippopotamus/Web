@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        let name = prompt("请输入用户名:");
+        let password = prompt("请输入密码:");
+
+        if (name === "pink" && password === "123456")
+        {
+            alert("登录成功");
+        }
+        else
+        {
+            alert("登录失败");
+        }
+    </script> -->
+
+    <!-- <script>
+        let year = +prompt("请输入年份");
+
+        if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0)
+        {
+            alert(`${year}是闰年`)
+        }
+        else
+        {
+            alert(`${year}是平年`)
+        }
+    </script> -->
+
+    <!-- <script>
+        let num = prompt("请输入数字");
+
+        num = num < 10 ? 0 + num : num;
+
+        alert(num);
+    </script> -->
+
+    <!-- <script>
+        let num1 = +prompt("请输入数字1");
+        let num2 = +prompt("请输入数字2");
+        let sp = prompt("请输入操作符");
+
+        switch (sp) {
+            case '+':
+                alert(`${num1} + ${num2} = ${num1 + num2}`);
+                break;
+            case '-':
+                alert(`${num1} - ${num2} = ${num1 - num2}`);
+                break;
+            case '*':
+                alert(`${num1} * ${num2} = ${num1 * num2}`);
+                break;
+            case '/':
+                alert(`${num1} / ${num2} = ${num1 / num2}`);
+                break;
+            default:
+                alert("输入错误");
+        }
+    </script> -->
+
+    <!-- <script>
+        let money = 100;
+        while (true) {
+            let re = +prompt(`
+            请您选择操作：
+            1.存钱
+            2.取钱
+            3.查看余额
+            4.退出 
+            `);
+
+            if (re === 4) {
+                break;
+            }
+
+            switch (re) {
+                case 1:
+                    money += +prompt("请输入存款金额");
+                    break;
+                case 2:
+                    money -= +prompt("请输入取款金额");
+                    break;
+                case 3:
+                    alert(`您的余额为${money}`);
+                    break;
+            }
+        }
+    </script> -->
+
+    <!-- 
+    <script src="./index.js">alert(`message`)</script> -->
+
+    <!-- <script>
+        console.log(typeof +'136');
+    </script> -->
+
+
+
+    <!-- <script>
+        for (let i = 0; i < 20; i++)
+        {
+            console.log(i);
+        }
+    </script> -->
+
+    <!-- <script>
+        let sum = 0;
+        for (let i = 1; i < 1001; i++) {
+            sum += i;
+        }
+        console.log(sum);
+    </script> -->
+
+    <!-- <script>
+        for (let i = 100; i < 201; i++)
+        {
+            if(i % 6 === 0)
+            {
+                console.log(i);
+            }
+        }
+    </script> -->
+
+    <!-- <script>
+        let num1;
+        let num2;
+
+        num1 = prompt("请输入数字1");
+        num2 = prompt("请输入数字2");
+
+        num1 > num2 ? document.write(num1) : document.write(num2);
+    </script> -->
+
+    <!-- <script>
+        while(true)
+        {
+
+        let num = prompt("请输入数字");
+        let sum = 0;
+
+        for (let i = 0; i < num; i++)
+        {
+            sum += i + 1;
+        }
+
+        alert(sum);
+        }
+    </script> -->
+
+    <!-- <script>
+        while (true)
+        {
+            let num = prompt("请输入");
+
+            if (num >= 90)
+            {
+                alert('A');
+            }
+            else if (num >= 80 && num <= 90)
+            {
+                alert('B');
+            }
+            else if (num >= 70 && num <= 80)
+            {
+                alert('C');
+            }
+            else if (num >= 60 && num <= 70)
+            {
+                alert('D');
+            }
+            else
+            {
+                alert('E');
+            }
+        }
+    </script> -->
+
+    <!-- <script>
+        while (true)
+        {
+            let situation = prompt(`
+            请您选择 + - * / 
+            如果输入q，则是退出结束程序
+            `)
+
+            if (situation === 'q')
+            {
+                break;
+            }
+
+            if (situation === '+')
+            {
+                let num1 = +prompt("请输入第一个数字");
+                let num2 = +prompt("请输入第二个数字");
+                alert(`${num1} + ${num2} = ${num1 + num2}`);
+            }
+            else if (situation === '-')
+            {
+                let num1 = +prompt("请输入第一个数字");
+                let num2 = +prompt("请输入第二个数字");
+                alert(`${num1} - ${num2} = ${num1 - num2}`);
+            }
+            else if (situation === '*')
+            {
+                let num1 = +prompt("请输入第一个数字");
+                let num2 = +prompt("请输入第二个数字");
+                alert(`${num1} * ${num2} = ${num1 * num2}`);
+            }
+            else if (situation === '/')
+            {
+                let num1 = +prompt("请输入第一个数字");
+                let num2 = +prompt("请输入第二个数字");
+                alert(`${num1} / ${num2} = ${num1 / num2}`);
+            }
+        }
+    </script> -->
+
+
+</body>
+
+</html>

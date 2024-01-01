@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        /* 对于块级元素，如果希望其在父元素中居中显示
+        可以给该块级元素固定的宽度，并且设置margin: 0 auto  */
+        .big {
+            width: 1500;
+            margin: 0 auto;
+        }
+
+        .big div {
+            height: 300px;
+            width: 300px;
+            display: inline-block;
+            border: 1px solid gray;
+            padding: 10px;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        div img {
+            width: 100%
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div>
+            <img src="./image/23.11.20.img1.jpg" />
+            在此处添加对图片的描述
+        </div>
+        <div>
+            <img src="./image/23.11.20.img2.jpg" />
+            在此处添加对图片的描述
+        </div>
+        <div>
+            <img src="./image/23.11.20.img3.jpg" />
+            在此处添加对图片的描述
+        </div>
+        <div>
+            <img src="./image/23.11.20.img4.jpg" />
+            在此处添加对图片的描述
+        </div>
+    </div>
+</body>
+
+</html>

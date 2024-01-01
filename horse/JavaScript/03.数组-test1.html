@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<style>
+			/* span {
+				display: inline-block;
+				padding: 5px 10px;
+                width: 80px;
+				border: 1px solid skyblue;
+				margin: 2px;
+				border-radius: 5px;
+				box-shadow: 2px 2px 2px skyblue;
+                background-color: rgba(189, 237, 255, 0.993);
+			} */
+            * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            display: flex;
+            width: 700px;
+            height: 300px;
+            border-left: 1px solid skyblue;
+            border-bottom: 1px solid skyblue;
+            margin: 50px auto;
+            justify-content: space-around;
+            align-items: flex-end;
+            text-align: center;
+        }
+
+        .box>div {
+            display: flex;
+            width: 50px;
+            background-color: skyblue;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .box div span {
+
+            margin-top: -20px;
+        }
+
+        .box div h4 {
+            margin-bottom: -35px;
+            width: 70px;
+            margin-left: -10px;
+        }
+		</style>
+	</head>
+
+	<body>
+		<!-- <script>
+			for (let i = 1; i < 10; i++) 
+            {
+				for (let j = 1; j < i + 1; j++) 
+                {
+					document.write(`<span>${j} * ${i} = ${i * j}</span>`);
+				}
+				document.write("<br>");
+			}
+		</script> -->
+
+        <!-- <script>
+            let arr = [22, 77, 78, 56, 4, 555, 1, 5, 3, 9, 22];
+
+            let newArr = [];
+
+            for (let i = 0; i < arr.length; i++)
+            {
+                if (arr[i] >= 10)
+                {
+                    newArr.push(arr[i]);
+                }
+            }
+            document.write(newArr);
+        </script> -->
+        
+        <script>
+
+            document.write(`<div class="box">`);
+
+            let arr = [];
+            
+            for (let i = 0; i < 4; i++)
+            {
+                arr.push(prompt(`请输入第${i + 1}季度的数据:`));
+            }
+
+            for (let i = 0; i < arr.length; i++)
+            {
+                document.write(`
+                <div style="height: ${arr[i]}px;">
+                <span>${arr[i]}</span>
+                <h4>第${i + 1}季度</h4>
+            </div>`)
+            }
+
+            document.write(`</div>`);
+        </script>
+
+        
+
+
+	</body>
+</html>

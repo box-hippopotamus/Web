@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		   
+		<meta charset="UTF-8" />
+		   
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		   
+		<title>Document</title>
+	</head>
+	<body>
+		    <input type="text" id="p" /><input type="button" value="启动" id="o" />
+	</body>
+	<script>
+		let o = document.getElementById("o");
+		o.onclick = function () {
+			let p = document.getElementById("p").value;
+			for (a = 1; a <= p; a++) {
+				for (b = 1; b <= a; b++) {
+					document.write(a + "*" + b + "=" + a * b + " ");
+				}
+				document.write("<br/>");
+			}
+		};
+	</script>5
+</html>

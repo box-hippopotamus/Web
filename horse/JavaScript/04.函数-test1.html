@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+
+        let num1 = 1;
+        let num2 = 2;
+
+        function getAdd(a, b)
+        {
+            let num1 = a;
+            let num2 = b;
+            return num1 + num2;
+        }
+
+        getAdd(5, 4);
+
+        console.log(num1);
+        console.log(num2);
+
+        
+    </script> -->
+
+    <script>
+        let second = +prompt(`输入秒数：`);
+
+        function getTime(t)
+        {
+            let h = parseInt(t / 60 / 60 % 24);
+            let m = parseInt(t / 60 % 60);
+            let s = parseInt(t % 60);
+
+            h = h < 10 ? '0' + h : h;
+            s = s < 10 ? '0' + s : s;
+            m = m < 10 ? '0' + m : m;
+
+            console.log(h, m, s);
+
+            return `转化完毕后是${h}时${m}分${s}秒`;
+        }
+
+        let str = getTime(second);
+        document.write(str);
+    </script>
+</body>
+</html>

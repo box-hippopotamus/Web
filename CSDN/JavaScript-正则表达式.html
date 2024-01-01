@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const reg1 = /^[UFO]{2,4}[科学家]?$/;
+
+        const str1 = "UFO";
+        const str2 = "F";
+        const str3 = "FUO科";
+        const str4 = "UF科学家";
+
+        console.log(reg1.test(str1));
+        console.log(reg1.test(str2));
+        console.log(reg1.test(str3));
+        console.log(reg1.test(str4));
+
+
+        
+
+
+    </script>
+</body>
+</html>

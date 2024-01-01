@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+</head>
+
+<body>
+    <table>
+        <!--
+            action的属性值为表单数据发送的位置
+            （通常为服务器端的发送方式）
+            method的属性值为服务器端的发送方式（POST/GET）
+        -->
+        <form action="http://localhost/" method="POST">
+            <!--普通文本框type="text"
+                密码type="password"
+                文件上传type="file"
+                name属性用于区分不同表单元素
+            -->
+            <input type="text" name="username" />
+            <br />
+            <input type="password" name="pwd" />
+            <br />
+            <input type="file" name="avatar" />
+            <br />
+
+        </form>
+    </table>
+</body>
+
+</html>

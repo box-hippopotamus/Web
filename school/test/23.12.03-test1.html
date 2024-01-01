@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+	<body>
+		<input type="text" id="text"/>
+		<input type="button" value="启动" onclick="a()" />
+	</body>
+	<script>
+		function a() {
+			var textbox = document.getElementById("text");
+			var i = textbox.value;
+			i = Number(i);
+			for (let x = 1; x <= i; x++) {
+				for (let y = 1; y <= x; y++) {
+					document.write(x + "*" + y + "=" + x * y);
+					document.write("&nbsp;");
+				}
+				document.write("</br>");
+			}
+		}
+	</script>
+</html>
+

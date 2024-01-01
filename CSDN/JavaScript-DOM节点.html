@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+            ul {
+                padding: 0;
+                display: block;
+                box-sizing: border-box;
+                font-size: medium;
+                color: gray;
+                text-align: center;
+                line-height: 30px;
+            }
+            li {
+                list-style: none;
+                display: block;
+                box-sizing: border-box;
+                color: gray;
+                text-align: center;
+                line-height: 100px;
+            }
+            .father {
+                width: 300px;
+                height: 300px;
+                background-color: lightsalmon;
+                border: 2px solid gray;
+                overflow: hidden;
+            }
+			.skyblue {
+				width: 100px;
+				height: 100px;
+				background-color: skyblue;
+				border: 2px solid gray;
+                margin-left: 33px;
+                margin-top: 33px;
+				float: left;
+			}
+			.pink {
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				border: 2px solid gray;
+                margin-right: 33px;
+                margin-top: 33px;
+				float: right;
+			}
+			.gold {
+				width: 100px;
+				height: 100px;
+				background-color: gold;
+				border: 2px solid gray;
+                margin-left: 33px;
+                margin-top: 33px;
+				float: left;
+			}
+			.palegreen {
+				width: 100px;
+				height: 100px;
+				background-color: palegreen;
+				border: 2px solid gray;
+                margin-right: 33px;
+                margin-top: 33px;
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="father">
+			<li class="skyblue">child-1</li>
+			<li class="pink">child-2</li>
+            <li class="gold">child-3</li>
+            <li class="palegreen">child-4</li>
+		</ul>
+
+        <script>
+           const gold = document.querySelector(".gold");
+           const father = document.querySelector(".father");
+
+           father.removeChild(gold);
+
+        </script>
+	</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			function sum(x, y) {
+				return x + y;
+			}
+
+			function changeNum(x, y) {
+				let tmp = x;
+				x = y;
+				y = tmp;
+			}
+
+			// let x = 1;
+			// let y = 2;
+			// changeNum(x,y);
+			// console.log(`x = ${x}`);
+			// console.log(`y = ${y}`);
+
+			function cridit() {
+				let balance = +prompt(`输入银行卡余额:`);
+				let consume1 = +prompt(`输入当月食宿消费金额:`);
+				let consume2 = +prompt(`输入当月生活消费金额:`);
+
+				let newBalance = balance - consume1 - consume2;
+				alert(`您的余额为${newBalance}`);
+				return newBalance;
+			}
+
+			function handleData(arr, way = true) {
+				let sum = 0;
+				for (let i = 0; i < arr.length; i++) 
+                {
+					sum += arr[i];
+				}
+
+				if (way) {
+					return sum;
+				} 
+                else {
+					return sum / arr.length;
+				}
+			}
+
+			function some(ele, arr = []) {
+				for (let i = 0; i < arr.length; i++) 
+                {
+					if (arr[i] === ele) 
+                        return true;
+				}
+				return false;
+			}
+
+			// let re = some("荔枝", ["苹果", "香蕉", "橘子", "荔枝", "梨子"]);
+			// console.log(re); // true
+
+			// let re1 = some("榴莲", ["苹果", "香蕉", "橘子", "荔枝", "梨子"]);
+			// console.log(re1); // false
+
+			// 封装函数返回元素的下标  [1, 5, 10, 22, 8, 7]
+			// 1. 封装函数 findIndex，传递2个参数 元素、数组
+			function findIndex(ele, arr = []) {
+				for (let i = 0; i < arr.length; i++)
+                {
+					if (arr[i] === ele) 
+                        return i;
+				}
+				return -1;
+			}
+
+			let index1 = findIndex(10, [1, 5, 10, 22, 8, 7]);
+			console.log(index1); // 2
+
+			let index2 = findIndex(8, [1, 5, 10, 22, 8, 7]);
+			console.log(index2); // 4
+
+			let index3 = findIndex(88, [1, 5, 10, 22, 8, 7]);
+			console.log(index3); // -1
+		</script>
+	</body>
+</html>

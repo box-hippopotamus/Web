@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            box-sizing: border-box;
+            background-color: skyblue;
+            border: 2px solid gray;
+            height: 300px;
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 300px;
+            color: gray;
+            font-size: 20px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        
+        const mi = {
+            name: "小米10",
+            price: "1999"
+        }
+
+        localStorage.setItem("mi", JSON.stringify(mi));
+
+        console.log(localStorage.getItem("mi"));
+        console.log(JSON.parse(localStorage.getItem("mi")));
+
+        localStorage.removeItem("mi");
+
+    </script>
+</body>
+</html>

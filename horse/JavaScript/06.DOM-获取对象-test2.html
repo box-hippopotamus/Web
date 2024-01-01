@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body {
+            background: url(./images/06/desktop_1.jpg);
+        } */
+    </style>
+</head>
+<body>
+    <!-- <div class="box"></div>
+    <script>
+        const box = document.querySelector(".box");
+
+        box.style.width = "300px";
+        box.style.backgroundColor = "yellow";
+
+        box.style.borderTop = "2px solid red";
+    </script> -->
+
+    <script>
+        function getRandom(N , M)
+        {
+            return Math.floor(Math.random() * (M - N - 1)) + N; 
+        }
+
+        const random = getRandom(1, 10);
+
+        document.body.style.backgroundImage = `url(./images/06/desktop_${random}.jpg)`;
+    </script>
+</body>
+</html>

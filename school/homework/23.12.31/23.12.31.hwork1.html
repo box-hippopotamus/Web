@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<input type="text" />
+		<button>启动</button>
+
+		<script>
+			const btn = document.querySelector("button");
+			const txt = document.querySelector("input[type='text']");
+
+			btn.addEventListener("click", function () {
+				const num = parseInt(txt.value);
+
+				for (let i = 1; i <= num; i++) {
+					for (let j = 1; j <= i; j++) {
+						document.write(`&nbsp; <span>${j} * ${i} = ${i * j}</span> &nbsp;`);
+					}
+					document.write("</br>");
+				}
+			});
+		</script>
+	</body>
+</html>
