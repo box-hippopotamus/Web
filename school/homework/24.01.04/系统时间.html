@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			setInterval(function () {
+				const now = new Date();
+
+                let year = now.getFullYear();
+                let month = now.getMonth() + 1;
+                let day = now.getDate();
+                let time = now.toLocaleTimeString();
+
+                month = month < 10 ? '0' + month : month;
+                day = day < 10 ? '0' + day : day;
+
+                document.write(`<li>${year + '-' + month + '-' + day + ' ' + time}</li>`);
+			}, 1000);
+		</script>
+	</body>
+</html>

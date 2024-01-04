@@ -9,10 +9,15 @@
     
     <script>
         
-        console.log(str + "world");
+        let obj = {
+            name: "zhansgan",
+            age: 18,
+            gender: "man"
+        }
 
-        var str = "hello";
-
+        const {name = "lisi", age, man, friend = "lisi"} = obj;
+        console.log(name);
+        console.log(friend);
 
     </script>
 </body>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>随机点名</button>
+
+    <script>
+        const studentNameData = ["张三", "李四", "王五", "赵六", "孙七", "周八", "吴九", "郑十"];
+        
+        function randomName(){
+            const ranodm = Math.floor(Math.random() * studentNameData.length);
+            alert(`你好-${studentNameData[ranodm]}`);
+        }
+
+        const btn = document.querySelector("button");
+        btn.addEventListener("click", randomName);
+    </script>
+</body>
+</html>
