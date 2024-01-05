@@ -30,4 +30,16 @@
     $(".sugform").slideUp();
   })
 
+  //自动轮播
+  function autoplay() {
+    let $last = $(".wblist").last();
+    let $wbdesc = $(".wbdesc");
+    $wbdesc.prepend($last);
+    let height = $last.outerHeight(true);
+    $wbdesc.css("top", -height);
+    $wbdesc.delay(2000).animate({top: 0}, autoplay);
+  }
+  
+  autoplay();
+
 })()
