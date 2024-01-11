@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>排序</title>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				font-size: 16px;
+				font-family: "微软雅黑";
+				color: #7d7d7d;
+			}
+			.star {
+				box-sizing: border-box;
+				height: 200px;
+				width: 400px;
+				background-color: #f6f6f6;
+				border-radius: 8px;
+				border: 1px solid #e7e7e7;
+				margin: 100px auto;
+			}
+			.star .line {
+				box-sizing: border-box;
+				width: 100%;
+				height: 20%;
+				background-color: #e9e9e9;
+				border-radius: 8px 8px 0 0;
+			}
+			.line i:nth-child(1) {
+				height: 16px;
+				width: 16px;
+				border-radius: 8px;
+				background-color: #fd5a57;
+				margin-top: 5px;
+				margin-left: 10px;
+				float: left;
+			}
+			.line i:nth-child(2) {
+				height: 16px;
+				width: 16px;
+				border-radius: 8px;
+				background-color: #fdbd3c;
+				margin-top: 5px;
+				margin-left: 10px;
+				float: left;
+			}
+			.line i:nth-child(3) {
+				height: 16px;
+				width: 16px;
+				border-radius: 8px;
+				background-color: #24cb4c;
+				margin-top: 5px;
+				margin-left: 10px;
+				float: left;
+			}
+			.choose {
+				box-sizing: border-box;
+				height: 80%;
+			}
+			.choose p {
+				margin-top: 10px;
+				margin-left: 20px;
+			}
+			.choose button {
+				height: 16px;
+				width: 16px;
+				border-radius: 8px;
+				cursor: pointer;
+			}
+			.choose span {
+				display: block;
+				box-sizing: border-box;
+				height: 20px;
+				line-height: 20px;
+				float: left;
+				margin-left: 20px;
+				margin-top: 10px;
+			}
+			.insert button {
+				background-color: #ff0000;
+			}
+			.shell button {
+				background-color: #ff7f00;
+			}
+			input {
+				height: 20px;
+				width: 150px;
+				display: block;
+				float: left;
+				background-color: #dcdcdc;
+				border: 1px solid #d3d4d4;
+				border-radius: 5px;
+				margin-left: 20px;
+				margin-top: 10px;
+			}
+			.random button {
+				background-color: #fdbd3c;
+				margin-left: 20px;
+			}
+			.choose .submit {
+				width: 50px;
+				height: 20px;
+				margin-left: 20px;
+				margin-top: 10px;
+				line-height: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="star">
+			<div class="line">
+				<i></i>
+				<i></i>
+				<i></i>
+			</div>
+			<div class="choose">
+				<p>选择你需要的排序：</p>
+				<span class="insert"><button data-id="1"></button>选择排序</span>
+				<span class="shell"><button data-id="2"></button>希尔排序</span>
+				<!-- --------------------------------------------------------------------- -->
+				<!-- <p class="random">随机生成数据:<button></button></p>
+				<p>输入数据：</p>
+				<p>要求：总共不超过20个数据 | 数据在1 - 100 之间</p>
+				<p>数据用英文逗号分隔 | 输入结束后回车</p>
+				<input type="text" />
+				<button class="submit">确认</button> -->
+			</div>
+		</div>
+
+		<script>
+			const choose = document.querySelector(".choose");
+
+			function getData(sortType) {
+				choose.innerHTML = `
+				<p class="random">随机生成数据:<button></button></p>
+				<p>输入数据：</p>
+				<p>要求：总共不超过20个数据 | 数据在1 - 100 之间</p>
+				<p>数据用英文逗号分隔 | 输入结束后回车</p>
+				<input type="text" />
+				<button class="submit">确认</button>
+				`;
+
+				let sortArr = [];
+				const random = document.querySelector(".random button");
+				random.addEventListener("click", function () {
+					for (let i = 0; i < 20; i++) {
+						sortArr.push(Math.floor(Math.random() * (100 - 1 - 1)) + 1);
+					}
+					sessionStorage.setItem("sortArr", sortArr.join());
+					sessionStorage.setItem("sortType", sortType);
+					location.href = "./sort.html";
+				});
+
+				const submit = document.querySelector(".choose .submit");
+				const input = document.querySelector(".choose input");
+
+				submit.addEventListener("click", function (e) {
+					let sortString = input.value;
+					sortArr = sortString.split(",");
+					sortArr = sortArr.map((element) => Number(element));
+					if (sortArr.every((element) => !isNaN(element))) {
+						if (sortArr.every((element) => element >= 1 && element <= 100)) {
+							if (sortArr.length < 2) {
+								alert("数据长度小于2，请重新调整数据");
+							} else if (sortArr.length > 20) {
+								alert("数据长度超过20，请重新调整数据");
+							} else {
+								sessionStorage.setItem("sortArr", sortArr.join());
+								sessionStorage.setItem("sortType", sortType);
+								location.href = "./sort.html";
+							}
+						} else {
+							alert("您输入了[1,100]范围外的数据，请重新调整数据");
+						}
+					} else {
+						alert("您使用了半角英文逗号以外的符号，请重新调整数据");
+					}
+				});
+			}
+
+			choose.addEventListener("click", function (e) {
+				if (e.target.tagName === "BUTTON") {
+					getData(e.target.dataset.id);
+				}
+			});
+		</script>
+	</body>
+</html>

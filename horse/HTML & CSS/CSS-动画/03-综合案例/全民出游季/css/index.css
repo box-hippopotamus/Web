@@ -1,0 +1,77 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background: url(../images/f1_1.jpg) no-repeat center 0;
+    background-size: cover;
+}
+
+.cloud img {
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+
+.cloud img:nth-child(1) {
+    margin-left: -300px;
+    top: 20px;
+    animation: cloud 1s infinite alternate;
+}
+
+.cloud img:nth-child(2) {
+    margin-left: 400px;
+    top: 100px;
+    animation: cloud 1s infinite alternate 0.2s;
+}
+
+.cloud img:nth-child(3) {
+    margin-left: -550px;
+    top: 200px;
+    animation: cloud 1s infinite alternate 0.4s;
+}
+
+.index img {
+    position: absolute;
+}
+
+.index img:nth-child(1) {
+    left: 290px;
+    top: 620px;
+    animation: index 1s infinite alternate;
+}
+.index img:nth-child(2) {
+    left: 570px;
+    top: 620px;
+    animation: index 1s infinite alternate 0.2s;
+}
+.index img:nth-child(3) {
+    left: 850px;
+    top: 620px;
+    animation: index 1s infinite alternate 0.4s;
+}
+.index img:nth-child(4) {
+    left: 1120px;
+    top: 620px;
+    animation: index 1s infinite alternate 0.6s;
+}
+
+/* 云彩动画 */
+@keyframes cloud {
+    to{
+        transform: translateX(20px);
+    }
+}
+
+/* 下标动画 */
+@keyframes index {
+    to{
+        transform: translateY(20px);
+    }
+}
